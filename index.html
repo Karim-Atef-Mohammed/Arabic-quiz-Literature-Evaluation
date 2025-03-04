@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تقييم الطلاب (اختبار الأدب)</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">لوحة تقييم الطلاب</h1>
+            <p class="subtitle">تحليل إجابات الطلاب على أسئلة الاختبار</p>
+            <div class="legend">
+                <div class="legend-item"><span class="circle zero"></span> 0: عدم الإجابة أو إجابة منعدمة الصلة بالسؤال</div>
+                <div class="legend-item"><span class="circle one"></span> 1: ذكر الفكرة العامة أو إجابة ناقصة</div>
+                <div class="legend-item"><span class="circle two"></span> 2: إجابة وافية غطت العناصر المهمة في النموذج</div>
+            </div>
+        </header>
+
+        <section class="dashboard">
+            <div class="card overview-card">
+                <h2>ملخص الأداء</h2>
+                <div class="chart-container">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="card top-performers">
+                <h2>أفضل الطلاب أداءً</h2>
+                <div class="top-list" id="topPerformers">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section class="questions-analysis">
+            <h2>تحليل الأسئلة</h2>
+            <div class="chart-container">
+                <canvas id="questionsChart"></canvas>
+            </div>
+            <div class="questions-list">
+                <details>
+                    <summary>عرض الأسئلة</summary>
+                    <ol>
+                        <li>ما هو المقال؟ وما أنواعه من حيث المضمون؟</li>
+                        <li>هل يمكن حذف بعض الجمل الحوارية في الرواية دون أن يتأثر بناؤها الفني؟ ولماذا؟</li>
+                        <li>ما المقصود من محاكاة الواقع المعيش في الرواية؟</li>
+                        <li>اذكر أشهر رواية، ومن كاتبها؟</li>
+                        <li>ما رأي إدجار ألن بو في القصة القصيرة؟</li>
+                        <li>ما حجم القصة القصيرة؟ وهل يمكن اعتبارها اختصارًا للقصة الطويلة؟</li>
+                        <li>ماذا يقصد بمفهوم وحدة المسرحية قديمًا وحديثًا؟</li>
+                        <li>ما أسس بناء المسرحية؟</li>
+                        <li>كان لمحمد تيمور ومحمود تيمور فضلٌ على المسرحية بعد ثورة 1818م؛ وضّح.</li>
+                        <li>يُعدّ شوقي رائد المسرح الشعري؛ ناقش ذلك.</li>
+                    </ol>
+                </details>
+            </div>
+        </section>
+
+        <section class="full-data">
+            <h2>البيانات التفصيلية</h2>
+            <div class="table-container">
+                <table id="studentsTable">
+                    <thead>
+                        <tr>
+                            <th>الطالب</th>
+                            <th>س1</th>
+                            <th>س2</th>
+                            <th>س3</th>
+                            <th>س4</th>
+                            <th>س5</th>
+                            <th>س6</th>
+                            <th>س7</th>
+                            <th>س8</th>
+                            <th>س9</th>
+                            <th>س10</th>
+                            <th>المجموع</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- Student Detail Modal -->
+    <div id="studentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="studentDetailContent">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
